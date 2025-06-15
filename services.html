@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services - YourEventSpace</title>
+
+  <!-- AOS Library CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #000;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #111;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff5e5e;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #0f0;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff5e5e;
+    }
+
+    .services {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .services h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: white;
+    }
+
+    .services h2 span {
+      color: #ff5e5e;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .service-box {
+      background: #1a1a1a;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+    }
+
+    .service-box img {
+      width: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .service-box h3 {
+      color: #0ef;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .service-box p {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header data-aos="fade-down">
+    <div class="logo">Your<span style="color:#0ef">Event</span><span style="color:#f90">Space</span></div>
+    <nav>
+      <ul>
+        <li><a href="index.html" style="color:#f0a500; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Home</a></li>
+    <li><a href="about.html" style="color:#00bcd4; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">About</a></li>
+    <li><a href="services.html" style="color:#4caf50; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Services</a></li>
+    <li><a href="gallery.html" style="color:#ff5722; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Gallery</a></li>
+    <li><a href="review.html" style="color:#9c27b0; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Review</a></li>
+    <li><a href="contact.html" style="color:#03a9f4; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Contact</a></li>
+    <li><a href="pricing.html" style="color:#e91e63; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Pricing</a></li>
+    <li><a href="event.html" style="color:#ff9800; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Event</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <section class="services">
+    <h2 data-aos="fade-up">Our <span>Services</span></h2>
+    <div class="service-grid">
+      <div class="service-box" data-aos="fade-up">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/place-marker.png" alt="Venue Selection" />
+        <h3>Venue Selection</h3>
+        <p>Browse and book perfect venues suited for your event type and size.</p>
+      </div>
+      <div class="service-box" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/email.png" alt="Invitation Card" />
+        <h3>Invitation Card</h3>
+        <p>Create beautiful e-invites and send to your guests in one click.</p>
+      </div>
+      <div class="service-box" data-aos="fade-up" data-aos-delay="200">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/musical-notes.png" alt="Entertainment" />
+        <h3>Entertainment</h3>
+        <p>Book live performers, DJs, or artists tailored to your theme.</p>
+      </div>
+      <div class="service-box" data-aos="fade-up" data-aos-delay="300">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/restaurant.png" alt="Food and Drinks" />
+        <h3>Food and Drinks</h3>
+        <p>Select curated food packages from top-rated catering partners.</p>
+      </div>
+      <div class="service-box" data-aos="fade-up" data-aos-delay="400">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/camera.png" alt="Photos and Videos" />
+        <h3>Photos and Videos</h3>
+        <p>Hire photographers and videographers to capture every moment.</p>
+      </div>
+      <div class="service-box" data-aos="fade-up" data-aos-delay="500">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/dining-room.png" alt="Custom Food" />
+        <h3>Custom Food</h3>
+        <p>Create tailored menus for culture, theme, or dietary preferences.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AOS Library JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+</html>

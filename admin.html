@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin - YourEventSpace</title>
+  <style>
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #000;
+      color: #00ff00;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #111;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #00ff00;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #111;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ff00;
+    }
+
+    h1, h2 {
+      color: #00ff00;
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #00ff00;
+      text-align: center;
+    }
+
+    th {
+      background-color: #222;
+    }
+
+    tr:hover {
+      background-color: #333;
+    }
+
+    .loading {
+      text-align: center;
+      margin-top: 20px;
+      color: #00ff00;
+    }
+
+    @media (max-width: 768px) {
+      table, th, td {
+        font-size: 13px;
+      }
+
+      h1, h2 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Admin Dashboard - YourEventSpace</h1>
+  </header>
+
+  <div class="container">
+    <h2>Booking Records</h2>
+    <div class="loading" id="loading">Loading booking data...</div>
+    <table id="bookingTable" style="display: none;">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Event Type</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script>
+    const apiUrl = "https://pv2iup3trl.execute-api.ap-south-1.amazonaws.com/bookings"; 
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        const table = document.getElementById("bookingTable");
+        const tableBody = document.querySelector("#bookingTable tbody");
+        const loading = document.getElementById("loading");
+
+        if (!data || data.length === 0) {
+          loading.innerText = "No bookings found.";
+          return;
+        }
+
+        data.forEach(booking => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${booking.name || '-'}</td>
+            <td>${booking.email || '-'}</td>
+            <td>${booking.date || '-'}</td>
+            <td>${booking.time || '-'}</td>
+            <td>${booking.eventType || '-'}</td>
+          `;
+          tableBody.appendChild(row);
+        });
+
+        loading.style.display = "none";
+        table.style.display = "table";
+      })
+      .catch(error => {
+        document.getElementById("loading").innerText = "⚠️ Error loading booking data.";
+        console.error("Error:", error);
+      });
+  </script>
+</body>
+</html>

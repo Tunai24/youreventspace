@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YourEventSpace</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #000;
+      color: #fff;
+    }
+
+    header {
+      background-color: #111;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff5e5e;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff5e5e;
+    }
+
+    nav a[href="index.html"] { color: #0ef; }
+    nav a[href="about.html"] { color: #f90; }
+    nav a[href="services.html"] { color: #0f0; }
+    nav a[href="gallery.html"] { color: #0cf; }
+    nav a[href="review.html"] { color: #fc0; }
+    nav a[href="contact.html"] { color: #f0f; }
+
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url('https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero h2 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: #ff5e5e;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 700px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .hero a button {
+      padding: 0.75rem 2rem;
+      background-color: #ff5e5e;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .hero a button:hover {
+      background-color: #e04e4e;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Your<span style="color:#0ef">Event</span><span style="color:#f90">Space</span></div>
+    <nav>
+      <ul>
+        <li><a href="index.html" style="color:#f0a500; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Home</a></li>
+    <li><a href="about.html" style="color:#00bcd4; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">About</a></li>
+    <li><a href="services.html" style="color:#4caf50; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Services</a></li>
+    <li><a href="gallery.html" style="color:#ff5722; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Gallery</a></li>
+    <li><a href="review.html" style="color:#9c27b0; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Review</a></li>
+    <li><a href="contact.html" style="color:#03a9f4; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Contact</a></li>
+    <li><a href="pricing.html" style="color:#e91e63; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Pricing</a></li>
+    <li><a href="event.html" style="color:#ff9800; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Event</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to YourEventSpace</h2>
+    <h1>Unleash Your Event’s True Potential</h1>
+    <p>Whether you're planning an elegant wedding, a dynamic corporate seminar, or a vibrant cultural show, YourEventSpace is the all-in-one platform to discover venues, manage your bookings, and connect with top event professionals.</p>
+    <div class="hero-buttons">
+      <a href="services.html"><button>View Our Services</button></a>
+      <a href="https://ap-south-1mmw6jgpev.auth.ap-south-1.amazoncognito.com/login?client_id=5o4b0ifi6o0gdrknqe021h4htd&response_type=token&scope=email+openid+profile&redirect_uri=https://youreventspace-frontend.s3.ap-south-1.amazonaws.com/successpage.html"><button>Login / Sign Up</button></a>
+    </div>
+  </section>
+
+</body>
+</html>

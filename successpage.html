@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Success</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #0ef;
+      border: none;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    button:hover {
+      background-color: #09d;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to YourEventSpace!</h1>
+  <p id="token-status">Checking token...</p>
+
+  <button onclick="goHome()">Go to Homepage</button>
+
+  <script>
+    function parseToken() {
+      const hash = window.location.hash.substring(1);
+      const params = new URLSearchParams(hash);
+      const idToken = params.get('id_token');
+      const accessToken = params.get('access_token');
+
+      if (idToken || accessToken) {
+        document.getElementById('token-status').innerText = "✅ Login successful!";
+        // You can store token in localStorage if needed
+        localStorage.setItem("id_token", idToken);
+        localStorage.setItem("access_token", accessToken);
+      } else {
+        document.getElementById('token-status').innerText = "❌ No token found. Please log in again.";
+      }
+    }
+
+    function goHome() {
+      window.location.href = "https://youreventspace-frontend.s3.ap-south-1.amazonaws.com/index.html";
+    }
+
+    parseToken();
+  </script>
+
+</body>
+</html>

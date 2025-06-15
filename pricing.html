@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pricing - YourEventSpace</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #000;
+      color: #fff;
+    }
+
+    header {
+      background-color: #111;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff5e5e;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff5e5e;
+    }
+
+    nav a[href="index.html"] { color: #0ef; }
+    nav a[href="about.html"] { color: #f90; }
+    nav a[href="services.html"] { color: #0f0; }
+    nav a[href="gallery.html"] { color: #0cf; }
+    nav a[href="review.html"] { color: #fc0; }
+    nav a[href="contact.html"] { color: #f0f; }
+    nav a[href="pricing.html"] { color: #ff5e5e; }
+
+    .pricing-section {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .pricing-section h1 {
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      color: #ff5e5e;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 992px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 15px;
+      padding: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .card h3 {
+      margin: 1rem 0 0.5rem;
+      font-size: 1.5rem;
+      color: #0ef;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-bottom: 1rem;
+    }
+
+    .price {
+      font-size: 1.2rem;
+      color: #ff5e5e;
+      font-weight: bold;
+      margin-bottom: 0.7rem;
+    }
+
+    .card button {
+      background: #ff5e5e;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      color: white;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .card button:hover:not(:disabled) {
+      background: #e04e4e;
+    }
+
+    .card button:disabled {
+      background: #555;
+      cursor: not-allowed;
+    }
+
+    .message {
+      margin-top: 1rem;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 0.95rem;
+      display: none;
+      position: absolute;
+      bottom: 15px;
+      left: 10px;
+      right: 10px;
+      text-align: center;
+      z-index: 10;
+    }
+
+    .message.success {
+      background-color: #00cc88;
+      color: #000;
+    }
+
+    .message.error {
+      background-color: #cc0000;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Your<span style="color:#0ef">Event</span><span style="color:#f90">Space</span></div>
+    <nav>
+      <ul>
+        <li><a href="index.html" style="color:#f0a500; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Home</a></li>
+    <li><a href="about.html" style="color:#00bcd4; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">About</a></li>
+    <li><a href="services.html" style="color:#4caf50; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Services</a></li>
+    <li><a href="gallery.html" style="color:#ff5722; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Gallery</a></li>
+    <li><a href="review.html" style="color:#9c27b0; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Review</a></li>
+    <li><a href="contact.html" style="color:#03a9f4; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Contact</a></li>
+    <li><a href="pricing.html" style="color:#e91e63; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Pricing</a></li>
+    <li><a href="event.html" style="color:#ff9800; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Event</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="pricing-section">
+    <h1>Choose Your Event Package</h1>
+    <div class="cards">
+      <div class="card">
+        <img src="marriage.jpg" alt="Marriage">
+        <h3>Marriage</h3>
+        <p>Elegant décor, music, full-day venue, dinner for 100 guests.</p>
+        <div class="price">₹22,000</div>
+        <button>Book Now</button>
+        <div class="message" aria-live="polite"></div>
+      </div>
+      <div class="card">
+        <img src="anniversary.jpg" alt="Anniversary">
+        <h3>Anniversary</h3>
+        <p>Romantic themes, dinner setup, flower arrangements, photoshoot.</p>
+        <div class="price">₹18,500</div>
+        <button>Book Now</button>
+        <div class="message" aria-live="polite"></div>
+      </div>
+      <div class="card">
+        <img src="rice.jpg" alt="Rice Ceremony">
+        <h3>Rice Ceremony</h3>
+        <p>Traditional décor, priest arrangement, sweets & snacks.</p>
+        <div class="price">₹15,000</div>
+        <button>Book Now</button>
+        <div class="message" aria-live="polite"></div>
+      </div>
+      <div class="card">
+        <img src="swower.jpg" alt="Baby Shower">
+        <h3>Baby Shower</h3>
+        <p>Colorful theme, games, cake & customized gifts.</p>
+        <div class="price">₹14,000</div>
+        <button>Book Now</button>
+        <div class="message" aria-live="polite"></div>
+      </div>
+      <div class="card">
+        <img src="itparty.jpg" alt="Corporate Party">
+        <h3>Corporate Party</h3>
+        <p>Presentation setup, refreshments, networking lounge.</p>
+        <div class="price">₹20,000</div>
+        <button>Book Now</button>
+        <div class="message" aria-live="polite"></div>
+      </div>
+      <div class="card">
+        <img src="birth.jpg" alt="Birthday Party">
+        <h3>Birthday Party</h3>
+        <p>Custom theme, cake, entertainment, games & decor.</p>
+        <div class="price">₹16,000</div>
+        <button>Book Now</button>
+        <div class="message" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const API_URL = 'https://chfh7pm6ml.execute-api.ap-south-1.amazonaws.com/prod/booking';
+
+    function showMessage(card, message, isSuccess = true) {
+      const msgDiv = card.querySelector('.message');
+      msgDiv.textContent = message;
+      msgDiv.className = isSuccess ? 'message success' : 'message error';
+      msgDiv.style.display = 'block';
+      setTimeout(() => {
+        msgDiv.style.display = 'none';
+      }, 4000);
+    }
+
+    document.querySelectorAll('.card button').forEach(button => {
+      button.addEventListener('click', async function () {
+        const card = this.closest('.card');
+        const packageName = card.querySelector('h3').textContent;
+        const price = card.querySelector('.price').textContent;
+
+        const name = prompt('Please enter your full name:');
+        if (!name) {
+          showMessage(card, 'Booking cancelled: Name is required.', false);
+          return;
+        }
+
+        const email = prompt('Please enter your email address:');
+        if (!email || !validateEmail(email)) {
+          showMessage(card, 'Booking cancelled: Valid email is required.', false);
+          return;
+        }
+
+        this.disabled = true;
+        showMessage(card, 'Processing booking...', true);
+
+        const bookingData = {
+          name,
+          email,
+          event: `${packageName} - ${price}`
+        };
+
+        try {
+          const response = await fetch(API_URL, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(bookingData)
+          });
+
+          if (response.ok) {
+            showMessage(card, `Booking successful! Thank you, ${name}.`, true);
+          } else {
+            showMessage(card, 'Booking failed. Please try again later.', false);
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          showMessage(card, 'Error connecting to booking service.', false);
+        } finally {
+          this.disabled = false;
+        }
+      });
+    });
+
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email.toLowerCase());
+    }
+  </script>
+
+</body>
+</html>

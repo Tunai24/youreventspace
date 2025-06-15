@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | YourEventSpace</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #000;
+      color: #fff;
+    }
+
+    header {
+      background-color: #111;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff5e5e;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #0ef;
+    }
+
+    nav a[href="index.html"] { color: #0ef; }
+    nav a[href="about.html"] { color: #f90; }
+    nav a[href="services.html"] { color: #0f0; }
+    nav a[href="gallery.html"] { color: #0cf; }
+    nav a[href="review.html"] { color: #fc0; }
+    nav a[href="contact.html"] { color: #f0f; }
+
+    .about-section {
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+        url('https://images.unsplash.com/photo-1563298723-dcfebaa392e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center center/cover no-repeat;
+      padding: 4rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 100vh;
+    }
+
+    .about-section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #ff5e5e;
+    }
+
+    .about-section p {
+      font-size: 1.1rem;
+      color: #ddd;
+      margin-bottom: 1rem;
+      max-width: 800px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #888;
+      font-size: 0.9rem;
+      background: #111;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Your<span style="color:#0ef">Event</span><span style="color:#f90">Space</span></div>
+    <nav>
+      <ul>
+    <li><a href="index.html" style="color:#f0a500; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Home</a></li>
+    <li><a href="about.html" style="color:#00bcd4; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">About</a></li>
+    <li><a href="services.html" style="color:#4caf50; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Services</a></li>
+    <li><a href="gallery.html" style="color:#ff5722; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Gallery</a></li>
+    <li><a href="review.html" style="color:#9c27b0; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Review</a></li>
+    <li><a href="contact.html" style="color:#03a9f4; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Contact</a></li>
+    <li><a href="pricing.html" style="color:#e91e63; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Pricing</a></li>
+    <li><a href="event.html" style="color:#ff9800; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;">Event</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <section class="about-section">
+    <h1>About YourEventSpace</h1>
+    <p>YourEventSpace is your trusted partner in making every event unforgettable. We provide a seamless digital platform to book, manage, and personalize event spaces that match your vision.</p>
+    <p>Whether it’s a private party, wedding, or corporate function, we connect users with verified venues and vendors, saving time and reducing stress. With modern tools and professional guidance, our mission is to help you plan with confidence and ease.</p>
+    <p>We believe every event deserves a perfect space — YourEventSpace brings that dream to life.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 YourEventSpace. All rights reserved.
+  </footer>
+
+</body>
+</html>
